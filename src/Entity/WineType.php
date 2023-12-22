@@ -18,9 +18,6 @@ class WineType
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column]
-    private ?int $DepartmentInStore = null;
-
     #[ORM\OneToMany(mappedBy: 'wineType', targetEntity: Bottle::class, orphanRemoval: true)]
     private Collection $bottles;
 
@@ -46,17 +43,6 @@ class WineType
         return $this;
     }
 
-    public function getDepartmentInStore(): ?int
-    {
-        return $this->DepartmentInStore;
-    }
-
-    public function setDepartmentInStore(int $DepartmentInStore): static
-    {
-        $this->DepartmentInStore = $DepartmentInStore;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Bottle>

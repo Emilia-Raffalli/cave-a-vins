@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des vins{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des vins</h1>
+    {# <a href="{{ path('app_categories_new') }}">Nouvelle catégorie</a> #}
+    {% for bottle in bottles %}
+        {# <h2><a href ="{{path('app_categories_show', { id: category.id }) }}"> {{ category.name }}</a></h2> #}
+        <h2>{{ bottle.name }}</h2>
+
+    {% endfor %}
+
+{% endblock %}

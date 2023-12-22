@@ -20,8 +20,8 @@ class Bottle
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    #[ORM\Column(type: Types::INTEGER)]
+    private ?int $date = null;
 
     #[ORM\ManyToOne(inversedBy: 'bottles')]
     #[ORM\JoinColumn(nullable: false)]
@@ -64,12 +64,12 @@ class Bottle
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?int
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate(int $date): static
     {
         $this->date = $date;
 

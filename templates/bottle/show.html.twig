@@ -4,8 +4,8 @@
 
 {% block body %}
 
-    <h1>Affichage de la bouteille</h1>
-     <h1> {{ bottle.name }} </h1>
+    <h2>Affichage de la bouteille</h2>
+     <h3> {{ bottle.name }} </h3>
     <a href="{{ path('app_bottle_edit', { id: bottle.id }) }}">Modifier la bouteille</a>
 
 {% endblock %}

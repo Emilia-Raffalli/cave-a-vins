@@ -3,12 +3,13 @@
 {% block title %}Liste des vins{% endblock %}
 
 {% block body %}
-    <a href ="{{ path('app_bottle_new') }}">Nouvelle bouteille</a>
-    <h1>Liste des vins</h1>
+    <a href="{{ path('app_bottle_new') }}">Nouvelle bouteille</a>
+    <h2>Liste des vins</h2>
     {# <a href="{{ path('app_bottle_new') }}">Nouvelle bouteille</a> #}
     {% for bottle in bottles %}
-        <h2><a href ="{{path('app_bottle_show', { id: bottle.id }) }}"> {{ bottle.name }}</a></h2>
-        <a href="">Supprimer la bouteille</a>
+        <h3><a href="{{ path('app_bottle_show', { id: bottle.id }) }}"> {{ bottle.name }}</a></h3>
+
+        <a href="{{ path('app_bottle_delete', { id: bottle.id }) }}">Supprimer la bouteille</a>
     {% endfor %}
 
 {% endblock %}

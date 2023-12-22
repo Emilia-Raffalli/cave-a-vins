@@ -47,7 +47,7 @@ class BottleController extends AbstractController
         ]);
     }
 
-    #[Route('bouteilles/edit/{id<^\d+$>}', name:'app_bottle_edit')]
+    #[Route('/bouteilles/edit/{id<^\d+$>}', name:'app_bottle_edit')]
     public function edit(Bottle $bottle, Request $request, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(BottleType::class, $bottle);
@@ -67,14 +67,14 @@ class BottleController extends AbstractController
 
     }
     
-    // #[Route('bouteilles/{id<^\d+$>}', name:'app_bottle_delete')]
-    // function delete(Bottle $bottle, EntityManagerInterface $em, BottleRepository $bottleRepository)
-    // {
-    //     $em->remove($bottle);
-    //     $em->flush();
+    #[Route('/bouteilles/{id<^\d+$>}/delete', name:'app_bottle_delete')]
+    public function delete(Bottle $bottle, EntityManagerInterface $em): Response
+    {
+        $em->remove($bottle);
+        $em->flush();
     
-    //     return $this->redirectToRoute('app_bottle');
-    // }
+        return $this->redirectToRoute('app_bottle');
+    }
 
 
 }

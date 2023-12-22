@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage de la bouteille{% endblock %}
+
+{% block body %}
+
+    <h1>Affichage de la bouteille</h1>
+     <h1> {{ bottle.name }} </h1>
+    <a href="{{ path('app_bottle_edit', { id: bottle.id }) }}">Modifier la bouteille</a>
+
+{% endblock %}
+
